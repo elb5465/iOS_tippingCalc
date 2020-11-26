@@ -9,19 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var navBarHeader: UINavigationItem!
+    @IBOutlet weak var cntPplLabel: UILabel!
+    @IBOutlet weak var totalTextLabel: UILabel!
+    @IBOutlet weak var perPersonTextLabel: UILabel!
+    @IBOutlet weak var billamtLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var perPersonLabel: UILabel!
     @IBOutlet weak var tipSegment: UISegmentedControl!
-//    @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var numPplLabel: UILabel!
     @IBOutlet weak var stepperCnt: UIStepper!
+    @IBOutlet weak var perPersonView: UIView!
+    @IBOutlet weak var tipamtLabel: UILabel!
+    @IBOutlet weak var darkModeIcon: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.layer.shadowColor = UIColor.black.cgColor
+        perPersonView.layer.shadowColor = UIColor.black.cgColor
     }
 
     @IBAction func onTap(_ sender: Any) {
@@ -30,7 +40,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func updateNumPeople(_ sender: Any) {
-        numPplLabel.text = String(Int(stepperCnt.value))
+        cntPplLabel.text = String(Int(stepperCnt.value))
     }
     
     
@@ -58,6 +68,62 @@ class ViewController: UIViewController {
     }
     
     @IBAction func toggleDarkMode(_ sender: Any) {
+        //SAVE ORIGINAL LIGHT VIEW COLORS HERE TO REVERT
+        let lightView = UIColor.white
+        let lightText = UIColor.black
+        
+        
+        if (darkModeSwitch.isOn){
+            view.backgroundColor = UIColor.darkGray
+            perPersonView.backgroundColor = UIColor.darkGray
+            
+            tipLabel.textColor       = UIColor.white
+            totalLabel.textColor     = UIColor.white
+            numPplLabel.textColor    = UIColor.white
+            cntPplLabel.textColor    = UIColor.white
+            perPersonLabel.textColor = UIColor.white
+            billamtLabel.textColor   = UIColor.white
+            tipamtLabel.textColor    = UIColor.white
+            totalTextLabel.textColor = UIColor.white
+            perPersonTextLabel.textColor = UIColor.white
+            
+            tipSegment.backgroundColor = UIColor.white
+            tipSegment.tintColor = UIColor.green
+            
+            darkModeIcon.tintColor = UIColor.white
+
+            billField.backgroundColor  = UIColor.white
+            stepperCnt.backgroundColor = UIColor.white
+            
+        }
+        
+        if (!darkModeSwitch.isOn){
+            view.backgroundColor = lightView
+            perPersonView.backgroundColor = lightView
+            
+            tipLabel.textColor       = lightText
+            totalLabel.textColor     = lightText
+            perPersonLabel.textColor = lightText
+            cntPplLabel.textColor    = lightText
+            numPplLabel.textColor    = lightText
+            billamtLabel.textColor   = lightText
+            tipamtLabel.textColor    = lightText
+            totalTextLabel.textColor = lightText
+            perPersonTextLabel.textColor = lightText
+            
+            tipSegment.backgroundColor = UIColor.lightGray
+            tipSegment.tintColor = UIColor.white
+
+            darkModeIcon.tintColor   = UIColor.purple
+            darkModeSwitch.tintColor = UIColor.purple
+
+            billField.backgroundColor  = UIColor.white
+            stepperCnt.backgroundColor = UIStepper.init().backgroundColor
+
+
+        }
+
+        
         print(darkModeSwitch.isOn)
         
     }

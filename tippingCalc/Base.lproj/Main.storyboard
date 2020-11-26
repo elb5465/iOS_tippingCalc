@@ -98,35 +98,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlh-cr-TaN">
-                                <rect key="frame" x="46" y="237" width="317" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suZ-fB-S0d">
+                                <rect key="frame" x="120" y="238" width="175" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eui-HY-uSe">
-                                        <rect key="frame" x="109" y="19" width="100" height="21"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlh-cr-TaN">
+                                        <rect key="frame" x="7" y="6" width="160" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="101" translatesAutoresizingMaskIntoConstraints="NO" id="PhO-Ca-leg">
-                                        <rect key="frame" x="112" y="48" width="94" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="DMg-LQ-zpG"/>
-                                            <action selector="updateNumPeople:" destination="BYZ-38-t0r" eventType="valueChanged" id="SGq-uL-rFk"/>
-                                        </connections>
-                                    </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msL-Zy-5ay">
-                                        <rect key="frame" x="90" y="88" width="138" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eui-HY-uSe">
+                                                <rect key="frame" x="30" y="19" width="100" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="101" translatesAutoresizingMaskIntoConstraints="NO" id="PhO-Ca-leg">
+                                                <rect key="frame" x="33" y="48" width="94" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="DMg-LQ-zpG"/>
+                                                    <action selector="updateNumPeople:" destination="BYZ-38-t0r" eventType="valueChanged" id="SGq-uL-rFk"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msL-Zy-5ay">
+                                                <rect key="frame" x="11" y="88" width="138" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -142,6 +149,7 @@
                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fGF-vr-xBy">
                                     <rect key="frame" x="343" y="6.6666666666666679" width="51" height="31.000000000000004"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="onTintColor" red="0.61046412090000002" green="0.4962409566" blue="0.80995315310000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="toggleDarkMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="KFT-Na-ZZ3"/>
                                     </connections>
@@ -154,13 +162,21 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="xVy-5y-yIO" id="ibY-0I-IAt"/>
+                        <outlet property="billamtLabel" destination="q62-qA-hO7" id="BKU-Jr-yI9"/>
+                        <outlet property="cntPplLabel" destination="eui-HY-uSe" id="Gh2-Sv-3Jd"/>
+                        <outlet property="darkModeIcon" destination="uer-R0-f6C" id="Ynm-fF-S4q"/>
                         <outlet property="darkModeSwitch" destination="fGF-vr-xBy" id="6AN-V2-jIx"/>
-                        <outlet property="numPplLabel" destination="eui-HY-uSe" id="rx8-rz-iXC"/>
+                        <outlet property="navBarHeader" destination="Ugs-uT-Dsz" id="EsI-PK-Se8"/>
+                        <outlet property="numPplLabel" destination="msL-Zy-5ay" id="orH-fC-Hul"/>
                         <outlet property="perPersonLabel" destination="ctf-oD-GEU" id="8rD-hk-8Uf"/>
+                        <outlet property="perPersonTextLabel" destination="y04-tj-MQc" id="e72-8z-KR0"/>
+                        <outlet property="perPersonView" destination="mlh-cr-TaN" id="Mnn-lU-VMK"/>
                         <outlet property="stepperCnt" destination="PhO-Ca-leg" id="Me0-VT-haa"/>
                         <outlet property="tipLabel" destination="jDx-6F-XP0" id="ika-ji-BzT"/>
                         <outlet property="tipSegment" destination="7QY-km-tkm" id="t08-Pc-aP7"/>
-                        <outlet property="totalLabel" destination="mVL-8T-u6w" id="ux1-IR-zzF"/>
+                        <outlet property="tipamtLabel" destination="bjI-Uh-1qt" id="DVa-Oo-yQt"/>
+                        <outlet property="totalLabel" destination="mVL-8T-u6w" id="LL9-iF-cRw"/>
+                        <outlet property="totalTextLabel" destination="m20-Wg-m20" id="4M0-DI-jhs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -201,6 +217,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
