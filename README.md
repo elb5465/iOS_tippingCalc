@@ -24,7 +24,7 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 - [ ] Dark Mode
-- [ ] Splitting tip among a group
+- [x] Splitting tip among a group
 
 ## Video Walkthrough
 
