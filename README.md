@@ -4,7 +4,7 @@
 
 Submitted by: **Eric Baker**
 
-Time spent: **4** hours spent in total
+Time spent: **12** hours spent in total
 
 ## User Stories
 
@@ -15,28 +15,26 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] UI animations
+* [x] UI animations
 * [ ] Remembering the bill amount across app restarts (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
-- [ ] Dark Mode
+    List anything else that you can get done to improve the app functionality!
+- [x] Dark Mode
 - [x] Splitting tip among a group
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
-
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+![](https://i.imgur.com/BDtQcmQ.gif)
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+- Couldn't manage to get my second view to go into darkmode even when using notification pushes to send a message to the second view - It received the message but for some reason still wouldn't update the background color and all.
 
 ## License
 
@@ -53,3 +51,4 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
