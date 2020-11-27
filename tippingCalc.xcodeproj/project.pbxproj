@@ -15,6 +15,7 @@
 		3D0C607825703066008C2D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0C607625703066008C2D91 /* LaunchScreen.storyboard */; };
 		3D0C608325703066008C2D91 /* tippingCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C608225703066008C2D91 /* tippingCalcTests.swift */; };
 		3D0C608E25703066008C2D91 /* tippingCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C608D25703066008C2D91 /* tippingCalcUITests.swift */; };
+		3D0C609F2570A460008C2D91 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C609E2570A460008C2D91 /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3D0C608925703066008C2D91 /* tippingCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tippingCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0C608D25703066008C2D91 /* tippingCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippingCalcUITests.swift; sourceTree = "<group>"; };
 		3D0C608F25703066008C2D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D0C609E2570A460008C2D91 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				3D0C606D25703065008C2D91 /* SceneDelegate.swift */,
 				3D0C606F25703065008C2D91 /* ViewController.swift */,
 				3D0C607125703065008C2D91 /* Main.storyboard */,
+				3D0C609E2570A460008C2D91 /* PopUpViewController.swift */,
 				3D0C607425703066008C2D91 /* Assets.xcassets */,
 				3D0C607625703066008C2D91 /* LaunchScreen.storyboard */,
 				3D0C607925703066008C2D91 /* Info.plist */,
@@ -261,6 +264,7 @@
 				3D0C607025703065008C2D91 /* ViewController.swift in Sources */,
 				3D0C606C25703065008C2D91 /* AppDelegate.swift in Sources */,
 				3D0C606E25703065008C2D91 /* SceneDelegate.swift in Sources */,
+				3D0C609F2570A460008C2D91 /* PopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -124,27 +124,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var numPplLabel: UILabel!
     @IBOutlet weak var stepperCnt: UIStepper!
-//    @IBOutlet weak var perPersonView: UIView!
     @IBOutlet weak var tipamtLabel: UILabel!
     @IBOutlet weak var darkModeIcon: UIBarButtonItem!
     
+    var observer: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        view.layer.shadowColor = UIColor.black.cgColor
-//        perPersonView.layer.shadowColor = UIColor.black.cgColor
-
-//        let yourView = UIView()
-//        yourView.layer.shadowColor = UIColor.black.cgColor
-//        yourView.layer.shadowOpacity = 1
-//        yourView.layer.shadowOffset = .zero
-//        yourView.layer.shadowRadius = 10
+        
+        // CHANGING THE FONT COLOR FOR THE SEGMENT COMPONENTS
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        tipSegment.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        tipSegment?.setTitleTextAttributes(titleTextAttributes, for: .normal)
         let blacktextAttr = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        tipSegment.setTitleTextAttributes(blacktextAttr, for: .selected)
+        tipSegment?.setTitleTextAttributes(blacktextAttr, for: .selected)
 
+        // SETTING A NOTIFICATION LISTENER FOR DATA FROM THE CUSTOM_TIP_POPUP
+        observer = NotificationCenter.default.addObserver(forName: Notification.Name("customTipValue"), object: nil, queue: .main, using: { notification in
+            
+            // RECEIVING A CUSTOM VALUE
+            // guard let object = notification.object as? [String: UIColor] else { return }
+            guard let object = notification.object as? [String: String] else { return }
+            guard let value = object["value"] else { return }
+            
+            // GET INDEX OF SELECTED SEGMENT
+            let selectedIndex = self.tipSegment.selectedSegmentIndex
+            
+            // UPDATE THAT SEGMENT'S TITLE WITH NEW  VALUE
+            self.tipSegment.setTitle(value, forSegmentAt: selectedIndex)
+        })
+        
     }
 
     @IBAction func onTap(_ sender: Any) {
@@ -188,7 +196,6 @@ class ViewController: UIViewController {
         
         if (darkModeSwitch.isOn){
             view.backgroundColor = UIColor.darkGray
-//            perPersonView.backgroundColor = UIColor.darkGray
             
             tipLabel.textColor       = UIColor.white
             totalLabel.textColor     = UIColor.white
@@ -199,20 +206,18 @@ class ViewController: UIViewController {
             tipamtLabel.textColor    = UIColor.white
             totalTextLabel.textColor = UIColor.white
             perPersonTextLabel.textColor = UIColor.white
-            
-//            tipSegment.backgroundColor = UIColor.white
-//            tipSegment.tintColor = UIColor.green
-            
+
+            navigationController?.navigationBar.barTintColor = UIColor.darkGray
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+
             darkModeIcon.tintColor = UIColor.white
 
             billField.backgroundColor  = UIColor.white
             stepperCnt.backgroundColor = UIColor.white
-            
         }
         
         if (!darkModeSwitch.isOn){
             view.backgroundColor = lightView
-//            perPersonView.backgroundColor = lightView
             
             tipLabel.textColor       = lightText
             totalLabel.textColor     = lightText
@@ -224,22 +229,19 @@ class ViewController: UIViewController {
             totalTextLabel.textColor = lightText
             perPersonTextLabel.textColor = lightText
             
-//            tipSegment.backgroundColor = UIColor.lightGray
-//            tipSegment.tintColor = UIColor.white
+            navigationController?.navigationBar.barTintColor = UIColor.white
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
 
             darkModeIcon.tintColor   = UIColor.purple
             darkModeSwitch.tintColor = UIColor.purple
 
             billField.backgroundColor  = UIColor.white
             stepperCnt.backgroundColor = UIStepper.init().backgroundColor
-
-
         }
-
-        
-        print(darkModeSwitch.isOn)
-        
     }
-
+    
+    
 }
+
+
 
