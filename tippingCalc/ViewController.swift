@@ -7,6 +7,108 @@
 
 import UIKit
 
+// Border radius, shadow, etc. taken from https://spin.atomicobject.com/2017/07/18/swift-interface-builder/
+
+@IBDesignable
+class DesignableView: UIView {
+}
+
+@IBDesignable
+class DesignableButton: UIButton {
+}
+
+@IBDesignable
+class DesignableLabel: UILabel {
+}
+
+extension UIView {
+    
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+
+    @IBInspectable
+    var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderColor: UIColor? {
+        get {
+            if let color = layer.borderColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.borderColor = color.cgColor
+            } else {
+                layer.borderColor = nil
+            }
+        }
+    }
+    
+    @IBInspectable
+    var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
+        }
+    }
+    
+    @IBInspectable
+    var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
+        }
+    }
+    
+    @IBInspectable
+    var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set {
+            layer.shadowOffset = newValue
+        }
+    }
+    
+    @IBInspectable
+    var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+        }
+    }
+}
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var navBarHeader: UINavigationItem!
@@ -22,7 +124,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var numPplLabel: UILabel!
     @IBOutlet weak var stepperCnt: UIStepper!
-    @IBOutlet weak var perPersonView: UIView!
+//    @IBOutlet weak var perPersonView: UIView!
     @IBOutlet weak var tipamtLabel: UILabel!
     @IBOutlet weak var darkModeIcon: UIBarButtonItem!
     
@@ -30,8 +132,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.layer.shadowColor = UIColor.black.cgColor
-        perPersonView.layer.shadowColor = UIColor.black.cgColor
+//        view.layer.shadowColor = UIColor.black.cgColor
+//        perPersonView.layer.shadowColor = UIColor.black.cgColor
+
+//        let yourView = UIView()
+//        yourView.layer.shadowColor = UIColor.black.cgColor
+//        yourView.layer.shadowOpacity = 1
+//        yourView.layer.shadowOffset = .zero
+//        yourView.layer.shadowRadius = 10
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        tipSegment.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        let blacktextAttr = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        tipSegment.setTitleTextAttributes(blacktextAttr, for: .selected)
+
     }
 
     @IBAction func onTap(_ sender: Any) {
@@ -75,7 +188,7 @@ class ViewController: UIViewController {
         
         if (darkModeSwitch.isOn){
             view.backgroundColor = UIColor.darkGray
-            perPersonView.backgroundColor = UIColor.darkGray
+//            perPersonView.backgroundColor = UIColor.darkGray
             
             tipLabel.textColor       = UIColor.white
             totalLabel.textColor     = UIColor.white
@@ -87,8 +200,8 @@ class ViewController: UIViewController {
             totalTextLabel.textColor = UIColor.white
             perPersonTextLabel.textColor = UIColor.white
             
-            tipSegment.backgroundColor = UIColor.white
-            tipSegment.tintColor = UIColor.green
+//            tipSegment.backgroundColor = UIColor.white
+//            tipSegment.tintColor = UIColor.green
             
             darkModeIcon.tintColor = UIColor.white
 
@@ -99,7 +212,7 @@ class ViewController: UIViewController {
         
         if (!darkModeSwitch.isOn){
             view.backgroundColor = lightView
-            perPersonView.backgroundColor = lightView
+//            perPersonView.backgroundColor = lightView
             
             tipLabel.textColor       = lightText
             totalLabel.textColor     = lightText
@@ -111,8 +224,8 @@ class ViewController: UIViewController {
             totalTextLabel.textColor = lightText
             perPersonTextLabel.textColor = lightText
             
-            tipSegment.backgroundColor = UIColor.lightGray
-            tipSegment.tintColor = UIColor.white
+//            tipSegment.backgroundColor = UIColor.lightGray
+//            tipSegment.tintColor = UIColor.white
 
             darkModeIcon.tintColor   = UIColor.purple
             darkModeSwitch.tintColor = UIColor.purple
