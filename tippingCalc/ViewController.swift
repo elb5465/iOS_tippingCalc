@@ -138,8 +138,10 @@ class ViewController: UIViewController {
         let blacktextAttr = [NSAttributedString.Key.foregroundColor: UIColor.black]
         tipSegment?.setTitleTextAttributes(blacktextAttr, for: .selected)
 
+        self.billField.becomeFirstResponder()
+        
         // SETTING A NOTIFICATION LISTENER FOR DATA FROM THE CUSTOM_TIP_POPUP
-        observer = NotificationCenter.default.addObserver(forName: Notification.Name("customTipValue"), object: nil, queue: .main, using: { notification in
+        observer = NotificationCenter.default.addObserver(forName: Notification.Name("customTipValue"), object: nil, queue: .main, using: { [self] notification in
             
             // RECEIVING A CUSTOM VALUE
             // guard let object = notification.object as? [String: UIColor] else { return }
@@ -149,8 +151,11 @@ class ViewController: UIViewController {
             // GET INDEX OF SELECTED SEGMENT
             let selectedIndex = self.tipSegment.selectedSegmentIndex
             
-            // UPDATE THAT SEGMENT'S TITLE WITH NEW  VALUE
+            // UPDATE THAT SEGMENT'S TITLE WITH NEW VALUE
             self.tipSegment.setTitle(value, forSegmentAt: selectedIndex)
+            
+            // CALL calculateTip TO UPDATE VALUE
+            self.calculateTip(self)
         })
         
     }
@@ -165,16 +170,25 @@ class ViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
     @IBAction func calculateTip(_ sender: Any) {
         //get bill amount
         let bill = Double(billField.text!) ?? 0
         
         //caclulate tip
-        let tipSegs   = [0.12, 0.16, 0.2]
-        let tipSegIdx = tipSegment.selectedSegmentIndex
-        let tipSegAmt = tipSegs[tipSegIdx]
+//        let tipSegs   = [0.12, 0.16, 0.2]
+//        let tipSegIdx = tipSegment.selectedSegmentIndex
+//        let tipSegAmt = tipSegs[tipSegIdx]
+        let selectedSeg = tipSegment.selectedSegmentIndex
+        let segTitle = tipSegment.titleForSegment(at: selectedSeg)?.replacingOccurrences(of: "%", with: "") ?? ""
         
-        let tip   = bill * tipSegAmt
+        var tipPercentage = Double(segTitle) ?? 1.0
+        tipPercentage = tipPercentage / 100
+        
+        let tip   = bill * tipPercentage
         let total = bill + tip
         var perPerson = total
 
@@ -187,6 +201,11 @@ class ViewController: UIViewController {
         totalLabel.text     = String(format: "$%.2f", total)
         perPersonLabel.text = String(format: "$%.2f", perPerson)
     }
+    
+    
+    
+    
+    
     
     @IBAction func toggleDarkMode(_ sender: Any) {
         //SAVE ORIGINAL LIGHT VIEW COLORS HERE TO REVERT
@@ -214,6 +233,10 @@ class ViewController: UIViewController {
 
             billField.backgroundColor  = UIColor.white
             stepperCnt.backgroundColor = UIColor.white
+            
+            // SEND AS NOTIFICATION TO OTHER VIEW
+            NotificationCenter.default.post(name: Notification.Name("darkMode"), object: ["mode": "dark"])
+
         }
         
         if (!darkModeSwitch.isOn){
