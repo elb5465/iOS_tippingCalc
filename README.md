@@ -1,4 +1,4 @@
-# Pre-work - *Tourist App*
+# *Tourist App*
 
 **TouristApp** is a demo application for iOS.
 
