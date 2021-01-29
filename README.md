@@ -26,6 +26,10 @@ Describe any challenges encountered while building the app.
 
 - Couldn't manage to get my second view to go into darkmode even when using notification pushes to send a message to the second view - It received the message but for some reason still wouldn't update the background color and all.
 
+
+## References
+- Paul Hudson
+
 ## License
 
     Copyright [2020] [Eric Baker]
