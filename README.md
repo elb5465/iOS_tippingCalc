@@ -2,9 +2,7 @@
 
 **tippingCalc** is a tip calculator application for iOS.
 
-Submitted by: **Eric Baker**
-
-Time spent: **12** hours spent in total
+Time spent: **12** hours 
 
 ## User Stories
 
